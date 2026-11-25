@@ -4,7 +4,7 @@ A mock award-style product launch site for a fictional watch, built to test how 
 
 ## Stack
 
-Vite 8 (no framework), Three.js, GSAP 3 (ScrollTrigger, SplitText), Lenis. npm, not pnpm. Not a git repo yet, so there is no undo: before a large rewrite of a file, copy it to the scratchpad first.
+Vite 8 (no framework), Three.js, GSAP 3 (ScrollTrigger, SplitText), Lenis. npm, not pnpm. Git repo `TayqQ/meridian` (public); commits use the GitHub noreply email set in the local git config. Pushing `main` deploys to production on Vercel: https://meridian-mu-brown.vercel.app
 
 ## Layout
 
@@ -19,7 +19,7 @@ Vite 8 (no framework), Three.js, GSAP 3 (ScrollTrigger, SplitText), Lenis. npm, 
 | Command | What it does |
 |---|---|
 | `npm run dev` | Dev server. The preview config `meridian` in `../.claude/launch.json` attaches to it on port 5174. |
-| `npm run build` | Production build into `dist/` |
+| `npm run build` | Production build into `dist/`. Preview config `meridian-prod` serves it on port 4174. |
 | `npm run model` | Rebuild `public/models/watch.glb` from the Blender script (headless Blender from `/Applications`, or set `BLENDER`) |
 | `npm run model -- --render` | Same, plus Cycles reference stills in `blender/renders/` |
 

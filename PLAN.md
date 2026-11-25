@@ -111,6 +111,8 @@ The v1 prototype builds the watch **procedurally in code** (Blender isn't instal
 - The motion timings are a first pass and need a human "feel" pass.
 - JS bundle is ~206 KB gzipped (mostly Three.js). Fine for now; would code-split in production.
 
+**Hosting (2026-11-25):** public repo at https://github.com/TayqQ/meridian (branch `main`), deployed on Vercel Hobby (team `taylorhallin-projects`, project `meridian`) at https://meridian-mu-brown.vercel.app. The repo is connected, so every push to `main` deploys to production. No `vercel.json` is needed, because Vite is auto-detected and links point to `/craft.html` directly. The production build was checked locally (`meridian-prod` preview config) at 1440×900 and 375×812, and the live URLs return 200. The live site hasn't been checked in a real browser yet.
+
 ## 8. The Blender model (done)
 
 `npm run model` rebuilds the watch from [blender/build_watch.py](blender/build_watch.py):
