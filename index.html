@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meridian · Calibre 01</title>
+    <meta name="description" content="Calibre 01, a 214-part mechanical watch made by hand in Sheffield." />
+    <meta name="color-scheme" content="dark" />
+    <!-- Critical CSS: paints the dark preloader over the page before style.css
+         arrives (in dev, Vite injects it from JS after the first paint).
+         Text stays transparent until style.css restores the preloader colour. -->
+    <style>
+      html, body { margin: 0; background: #0c0a08; }
+      .preloader { position: fixed; inset: 0; z-index: 100; background: #0a0907; color: transparent; }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <canvas class="webgl" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+
+    <div class="preloader" aria-hidden="true">
+      <div class="preloader__mask"><span class="preloader__name">Meridian — Calibre 01</span></div>
+      <div class="preloader__mask"><span class="preloader__count">000</span></div>
+      <div class="preloader__bar"><span></span></div>
+    </div>
+    <div class="curtain" aria-hidden="true"><span class="curtain__label">Meridian</span></div>
+    <div class="cursor" aria-hidden="true">
+      <div class="cursor__ring"><span class="cursor__label"></span></div>
+      <div class="cursor__dot"></div>
+    </div>
+
+    <header class="nav">
+      <a href="/" class="nav__logo" data-magnetic>Meridian</a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="/#layers">Calibre</a>
+        <a href="/craft.html">Craft</a>
+        <a href="/#reserve" class="nav__cta" data-magnetic>Reserve</a>
+      </nav>
+    </header>
+
+    <main data-page="home">
+      <section class="hero">
+        <div class="hero__inner">
+          <p class="eyebrow" data-fade>Calibre 01 · Automatic · 38.5mm</p>
+          <h1 class="hero__title" data-hero-title><span>Time,</span><span><em>taken</em> apart.</span></h1>
+          <div class="hero__foot">
+            <p class="hero__lede" data-fade>A 214-part mechanical watch, made by hand in a small workshop in Sheffield. Scroll to look inside.</p>
+            <div class="scroll-cue" data-fade><span>Scroll</span><i></i></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="layers" id="layers">
+        <div class="layers__head">
+          <p class="eyebrow">01 — Anatomy</p>
+          <h2 data-split>Engineered<br />in layers.</h2>
+        </div>
+        <ol class="layers__steps">
+          <li class="step"><h3>Sapphire crystal</h3><p>Domed 2.1mm sapphire, anti-reflective on both faces, so the dial reads like there's no glass at all.</p></li>
+          <li class="step"><h3>Polished bezel</h3><p>Turned from a single billet, then mirror-polished by hand for six hours.</p></li>
+          <li class="step"><h3>Sword hands</h3><p>Diamond-cut and polished. The lacquered seconds hand sweeps eight times a second.</p></li>
+          <li class="step"><h3>Sunburst dial</h3><p>Brass base, sunray brushed, eleven coats of clear lacquer. Applied indices, set by hand.</p></li>
+          <li class="step"><h3>Calibre M-01</h3><p>In-house automatic movement. 31 jewels, 28,800 vph, 72-hour power reserve.</p></li>
+          <li class="step"><h3>Exhibition caseback</h3><p>A second sapphire window, because the best part of the watch shouldn't be hidden.</p></li>
+        </ol>
+        <p class="layers__counter"><span class="layers__num">01</span><span>/06</span></p>
+      </section>
+
+      <div class="labels" aria-hidden="true">
+        <div class="label" data-part="crystal" data-dir="up"><i class="label__dot"></i><span class="label__text"><b>01</b> Crystal</span></div>
+        <div class="label" data-part="bezel" data-dir="down"><i class="label__dot"></i><span class="label__text"><b>02</b> Bezel</span></div>
+        <div class="label" data-part="hands" data-dir="up"><i class="label__dot"></i><span class="label__text"><b>03</b> Hands</span></div>
+        <div class="label" data-part="dial" data-dir="down"><i class="label__dot"></i><span class="label__text"><b>04</b> Dial</span></div>
+        <div class="label" data-part="movement" data-dir="up"><i class="label__dot"></i><span class="label__text"><b>05</b> Movement</span></div>
+        <div class="label" data-part="caseback" data-dir="down"><i class="label__dot"></i><span class="label__text"><b>06</b> Caseback</span></div>
+      </div>
+
+      <section class="materials" id="finish">
+        <div class="materials__inner">
+          <p class="eyebrow">02 — Finish</p>
+          <h2 data-split>Three finishes.<br /><em>One</em> movement.</h2>
+          <p class="materials__copy" data-reveal>Each case is machined from solid stock and finished by the same pair of hands. Choose the metal, and the dial follows.</p>
+          <div class="swatches" role="radiogroup" aria-label="Case finish" data-reveal>
+            <button class="swatch is-active" data-finish="gold" role="radio" aria-checked="true" data-cursor-label="Gold"><i style="--c: #d9b27c"></i><span>18k Gold</span></button>
+            <button class="swatch" data-finish="steel" role="radio" aria-checked="false" data-cursor-label="Steel"><i style="--c: #cfd3d9"></i><span>Steel</span></button>
+            <button class="swatch" data-finish="black" role="radio" aria-checked="false" data-cursor-label="Black"><i style="--c: #2e2d2f"></i><span>Black DLC</span></button>
+          </div>
+          <p class="materials__price" data-reveal>From <span class="price-mask"><span data-price>£14,200</span></span></p>
+        </div>
+      </section>
+
+      <section class="specs">
+        <div class="specs__head">
+          <p class="eyebrow">03 — Specification</p>
+          <p class="specs__hint">Keep scrolling →</p>
+        </div>
+        <div class="specs__track">
+          <article class="spec"><span class="spec__idx">i.</span><p class="spec__value"><span data-count="38.5" data-decimals="1">0</span><small>mm</small></p><h3 class="spec__label">Case diameter</h3><p class="spec__copy">Sized to sit under a shirt cuff. 11.2mm thick including the domed crystal.</p></article>
+          <article class="spec"><span class="spec__idx">ii.</span><p class="spec__value"><span data-count="72">0</span><small>h</small></p><h3 class="spec__label">Power reserve</h3><p class="spec__copy">Take it off on Friday and it's still running on Monday morning.</p></article>
+          <article class="spec"><span class="spec__idx">iii.</span><p class="spec__value"><span data-count="28800">0</span><small>vph</small></p><h3 class="spec__label">Frequency</h3><p class="spec__copy">Four beats a second: a smooth sweep and chronometer-grade accuracy.</p></article>
+          <article class="spec"><span class="spec__idx">iv.</span><p class="spec__value"><span data-count="214">0</span><small>parts</small></p><h3 class="spec__label">Components</h3><p class="spec__copy">Every one of them decorated, including the 160 you'll never see.</p></article>
+          <article class="spec"><span class="spec__idx">v.</span><p class="spec__value"><span data-count="100">0</span><small>m</small></p><h3 class="spec__label">Water resistance</h3><p class="spec__copy">Screw-down crown and caseback. Swim with it.</p></article>
+          <article class="spec"><span class="spec__idx">vi.</span><p class="spec__value"><span data-count="200">0</span><small>pcs</small></p><h3 class="spec__label">Edition</h3><p class="spec__copy">Numbered on the caseback. When they're gone, they're gone.</p></article>
+        </div>
+      </section>
+
+      <section class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Calibre 01 <i>✦</i> Made in Sheffield <i>✦</i> Two hundred pieces <i>✦</i>&nbsp;</span>
+          <span>Calibre 01 <i>✦</i> Made in Sheffield <i>✦</i> Two hundred pieces <i>✦</i>&nbsp;</span>
+        </div>
+      </section>
+
+      <section class="cta" id="reserve">
+        <div class="cta__inner">
+          <p class="eyebrow">04 — Reserve</p>
+          <h2 data-split>Two hundred<br /><em>pieces.</em> Ever.</h2>
+          <p class="cta__copy" data-reveal>Reservations open to the first two hundred. A deposit isn't required — we'll call you when yours is on the bench.</p>
+          <div class="cta__actions" data-reveal>
+            <button class="btn btn-reserve" data-magnetic data-cursor-label="Join"><span class="btn__label">Reserve yours</span></button>
+            <a class="link-arrow" href="/craft.html" data-cursor-label="Visit">See the workshop <span>→</span></a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>© 2026 Meridian Watch Co. A fictional brand for a Claude Code build test.</span>
+        <span>Sheffield · 53.38° N</span>
+      </footer>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

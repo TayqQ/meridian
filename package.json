@@ -1,0 +1,25 @@
+{
+  "name": "meridian",
+  "version": "1.0.0",
+  "description": "Mock award-style product site: Meridian Calibre 01",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "model": "sh blender/build.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.27",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@gltf-transform/cli": "^4.5.1",
+    "vite": "^8.3.5"
+  }
+}

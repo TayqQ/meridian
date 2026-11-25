@@ -1,0 +1,9 @@
+node_modules
+dist
+blender/out
+*.blend1
+blender/renders
+.DS_Store
+.vercel
+.wrangler
+.env*

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Workshop · Meridian</title>
+    <meta name="description" content="How Calibre 01 is drawn, machined, finished and assembled by one watchmaker." />
+    <meta name="color-scheme" content="dark" />
+    <!-- Critical CSS: paints the dark preloader over the page before style.css
+         arrives (in dev, Vite injects it from JS after the first paint).
+         Text stays transparent until style.css restores the preloader colour. -->
+    <style>
+      html, body { margin: 0; background: #0c0a08; }
+      .preloader { position: fixed; inset: 0; z-index: 100; background: #0a0907; color: transparent; }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <canvas class="webgl" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+
+    <div class="preloader" aria-hidden="true">
+      <div class="preloader__mask"><span class="preloader__name">Meridian — The Workshop</span></div>
+      <div class="preloader__mask"><span class="preloader__count">000</span></div>
+      <div class="preloader__bar"><span></span></div>
+    </div>
+    <div class="curtain" aria-hidden="true"><span class="curtain__label">Meridian</span></div>
+    <div class="cursor" aria-hidden="true">
+      <div class="cursor__ring"><span class="cursor__label"></span></div>
+      <div class="cursor__dot"></div>
+    </div>
+
+    <header class="nav">
+      <a href="/" class="nav__logo" data-magnetic>Meridian</a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="/#layers">Calibre</a>
+        <a href="/craft.html">Craft</a>
+        <a href="/#reserve" class="nav__cta" data-magnetic>Reserve</a>
+      </nav>
+    </header>
+
+    <main data-page="craft">
+      <section class="craft-hero">
+        <div class="craft-hero__inner">
+          <p class="eyebrow" data-fade>The Workshop · Sheffield</p>
+          <h1 class="hero__title" data-hero-title><span>The hand</span><span>behind the <em>hour.</em></span></h1>
+          <p class="hero__lede" data-fade>Four disciplines, one bench, around nine weeks per watch. This is how Calibre 01 gets made.</p>
+        </div>
+      </section>
+
+      <section class="chapter" data-pose="c1">
+        <div class="chapter__body">
+          <span class="chapter__num" aria-hidden="true">I</span>
+          <p class="eyebrow">Design</p>
+          <h2 data-split>Drawn by<br /><em>hand.</em></h2>
+          <p data-reveal>Every Calibre starts as a pencil drawing at ten times scale. We revised the case proportions forty-one times before cutting a single part.</p>
+          <p class="stat" data-reveal><span data-count="41">0</span><small>revisions</small></p>
+        </div>
+      </section>
+
+      <section class="chapter chapter--right" data-pose="c2">
+        <div class="chapter__body">
+          <span class="chapter__num" aria-hidden="true">II</span>
+          <p class="eyebrow">Machining</p>
+          <h2 data-split>Cut to two<br /><em>microns.</em></h2>
+          <p data-reveal>We machine our components in-house, then check each one under a microscope. Anything outside tolerance goes back into the melt.</p>
+          <p class="stat" data-reveal><span data-count="0.002" data-decimals="3">0</span><small>mm</small></p>
+        </div>
+      </section>
+
+      <section class="chapter" data-pose="c3">
+        <div class="chapter__body">
+          <span class="chapter__num" aria-hidden="true">III</span>
+          <p class="eyebrow">Finishing</p>
+          <h2 data-split>Finished where<br /><em>no one</em> looks.</h2>
+          <p data-reveal>Côtes de Genève, perlage, hand-bevelled bridges. Each movement gets thirty-seven hours of finishing, most of it on surfaces only a watchmaker will ever see.</p>
+          <p class="stat" data-reveal><span data-count="37">0</span><small>hours</small></p>
+        </div>
+      </section>
+
+      <section class="chapter chapter--right" data-pose="c4">
+        <div class="chapter__body">
+          <span class="chapter__num" aria-hidden="true">IV</span>
+          <p class="eyebrow">Assembly</p>
+          <h2 data-split>One watchmaker.<br /><em>Start</em> to finish.</h2>
+          <p data-reveal>One person builds your watch, from the first screw to final regulation, and signs the caseback before it leaves the bench.</p>
+          <p class="stat" data-reveal><span data-count="1">0</span><small>signature</small></p>
+        </div>
+      </section>
+
+      <section class="next" data-pose="next">
+        <p class="eyebrow">Next</p>
+        <a class="next__link" href="/" data-cursor-label="Open">Calibre <em>01</em></a>
+      </section>
+
+      <footer class="footer">
+        <span>© 2026 Meridian Watch Co. A fictional brand for a Claude Code build test.</span>
+        <span>Sheffield · 53.38° N</span>
+      </footer>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
